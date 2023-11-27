@@ -27,7 +27,7 @@ export default withApiAuthRequired (async function handler(req, res) {
      model: "gpt-3.5-turbo",
      messages: [
        {
-         role: "system",
+          role: "system",
          content: "You are a blog post generator.",
        },
        {
@@ -106,18 +106,18 @@ export default withApiAuthRequired (async function handler(req, res) {
       availableTokens:-1,
     }
   })
-
+  const parsed=JSON.parse(response.choices[0]?.text.split('\n').join(''))
   const post = await db.collection("posts").insertOne({
-    postContent,
-    title,
-    metaDescription,
+    postContent:parsed?.postContent,
+    title:parsed?.title,
+    metaDescription: parsed?.metaDescription ,
     topic,
     keywords,
     userId:userProfile._id,
-    created : new Date,
+    created : new Date( ),
   })
   res.status(200).json({
-    postId : post.insertedId,
+    postId :JSON.parse(response.choices[0]?.text.split('\n').join('')),
   });
-  
+   
 })

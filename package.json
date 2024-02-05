@@ -2,6 +2,9 @@
   "name": "nextjs-openai-starter",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -19,18 +22,18 @@
     "@webdeveducation/next-verify-stripe": "^1.0.1",
     "micro-cors": "^0.1.1",
     "mongodb": "^4.13.0",
-    "next": "13.1.6",
+    "next": "^14.1.0",
     "numeral": "^2.0.6",
     "openai": "^3.2.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "sharp": "^0.32.1",
     "stripe": "^11.8.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
     "eslint": "8.33.0",
-    "eslint-config-next": "13.1.6",
+    "eslint-config-next": "^14.1.0",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.4"
   }

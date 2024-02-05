@@ -9,7 +9,7 @@ export default function Success() {
   return (
     <div className="h-full flex flex-col justify-center items-center">
       <FontAwesomeIcon icon={faCheckCircle} className="text-7xl text-green-600 mb-4" />
-      <h1 className="text-3xl mb-4 text-green-600">Thank you for your purchase!</h1>
+      <h1 className="text-3xl mb-4 text-green-600">Thank you for your payment!</h1>
     </div>
   );
 }

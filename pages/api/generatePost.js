@@ -105,7 +105,9 @@ export default withApiAuthRequired (async function handler(req, res) {
 
   const titleWithTags = titleResult.data.choices[0]?.message?.content || "";
   const title = titleWithTags.replace(/<\/?title>/g, '');
-  const metaDescription = metaDescriptionResult.data.choices[0]?.message?.content || "";
+  // const metaDescription = metaDescriptionResult.data.choices[0]?.message?.content || "";
+  const metaDescriptionResponse = metaDescriptionResult.data.choices[0]?.message?.content || "";
+  const metaDescription = metaDescriptionResponse.replace(/<\/?meta>/g, ''); 
   console.log("POST CONTENT:", postContent);
   console.log("TITLE:", title);
   console.log("META DESCRIPTION:", metaDescription);
